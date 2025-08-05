@@ -10,7 +10,7 @@
       template:
         src: template/html_template.j2
         dest: "{{ item }}.html"
-      loop: "{{ qbr_pages }}"
+      with_items: "{{ qbr_pages }}"
       vars:
         start_value: "{{ qbr_settings[selected_quarter]['start'] }}"
         end_value: "{{ qbr_settings[selected_quarter]['end'] }}"
