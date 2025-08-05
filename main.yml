@@ -1,0 +1,31 @@
+---
+- name: Test playbook
+  hosts: localhost
+  gather_facts: false
+  connection: ssh
+  vars_file:
+    vars.yml
+  tasks:
+    - name: Create a html file
+      template:
+        src: template/html_template.j2
+        dest: "{{ item }}.html"
+      loop: "{{ qbr_pages }}"
+      vars:
+        start_value: "{{ qbr_settings[selected_quarter]['start'] }}"
+        end_value: "{{ qbr_settings[selected_quarter]['end'] }}"
+        project: "{{ qbr_pages[item]['project'] }}"
+        report_name: "{{ qbr_pages[item]['report_name'] }}"
+
+    - name: Create variables.txt
+      copy:
+        content: |
+          username={{ confluence_uname }}
+          password={{ confluence_pass }}
+          selected_quarter={{ selected_quarter }}
+          qbr_year={{ qbr_year }}
+        dest: "{{ playbook_dir }}/variables.txt"
+      no_log: true
+
+    - name: Push HTML pages to confluence
+      command: python3 create_pages.py

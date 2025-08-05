@@ -1,0 +1,27 @@
+qbr_settings:
+  Q1:
+    start: 1735689600000
+    end: 1743772799000
+  Q2:
+    start: 1743772800000
+    end: 1751855999000
+  Q3:
+    start: 1751856000000
+    end: 1759939199000
+  Q4:
+    start: 1759939200000
+    end: 1768022399000
+
+qbr_pages:
+  Alpha Team:
+    project: ABC,DEF
+    report_name: Weekly Status
+  Beta Squad:
+    project: GHI,JKL
+    report_name: Sprint Review
+  Gamma Group:
+    project: MNO,PQR
+    report_name: Bug Summary
+  Delta Crew:
+    project: STU,VWX
+    report_name: Performance Metrics
