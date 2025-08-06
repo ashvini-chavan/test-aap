@@ -25,7 +25,7 @@
           selected_quarter={{ selected_quarter }}
           qbr_year={{ qbr_year }}
         dest: "{{ playbook_dir }}/variables.txt"
-      no_log: true
+          #      no_log: true
 
     - name: Push HTML pages to confluence
       command: python3 create_pages.py
