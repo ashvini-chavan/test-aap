@@ -1,9 +1,0 @@
----
-- name: This is added to test
-  hosts: 43.204.44.192
-  connection: ssh
-  gather_facts: false
-  tasks:
-  - name: Print output
-    debug:
-      msg: "Hello!"
