@@ -19,9 +19,9 @@ qbr_pages:
   Beta Squad:
     project: GHI,JKL
     report_name: Sprint Review
-  Gamma Group:
-    project: MNO,PQR
-    report_name: Bug Summary
-  Delta Crew:
-    project: STU,VWX
-    report_name: Performance Metrics
+      #  Gamma Group:
+      #    project: MNO,PQR
+      #    report_name: Bug Summary
+      #  Delta Crew:
+      #    project: STU,VWX
+      #    report_name: Performance Metrics
