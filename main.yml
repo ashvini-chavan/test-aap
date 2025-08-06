@@ -1,7 +1,6 @@
 ---
 - name: Test playbook
-  hosts: 43.204.44.192
-  connection: ssh
+  hosts: localhost
   gather_facts: false
   vars_files:
     vars.yml
