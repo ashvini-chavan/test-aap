@@ -17,13 +17,14 @@
         project: "{{ qbr_pages[item]['project'] }}"
         report_name: "{{ qbr_pages[item]['report_name'] }}"
 
-          #    - name: Print the variables value
-          #      debug:
-          #        msg: |
-          #          "username: {{ confluence_uname }}"
-          #          "password: {{ confluence_pass }}"
-          #          "selected_quarter: {{ selected_quarter }}"
-          #          "qbr_year: {{ qbr_year }}"
+    - name: Print the variables value
+      debug:
+        msg: |
+          "username: {{ confluence_uname }}"
+          "password: {{ confluence_pass }}"
+          "selected_quarter: {{ selected_quarter }}"
+          "qbr_year: {{ qbr_year }}"
+          "playbook_dir: {{ playbook_dir }}"
 
     - name: Create variables.txt
       copy:
@@ -33,7 +34,7 @@
           selected_quarter={{ selected_quarter }}
           qbr_year={{ qbr_year }}
         dest: "{{ playbook_dir }}/variables.txt"
-      no_log: true
+          #      no_log: true
 
     - name: Push HTML pages to confluence
       command: python3 create_pages.py
